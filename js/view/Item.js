@@ -6,7 +6,6 @@ export default class Item{
     constructor(id, content){
 
         const bottomDropZone = DropZone.createDropZone();
-
         this.elements = {};
 
         this.elements.root = Item.createRoot();
@@ -26,6 +25,18 @@ export default class Item{
 
         this.elements.root.addEventListener("dragstart", e => {
             e.dataTransfer.setData("text/plain", id);
+
+            let zonesShow = document.querySelectorAll(".kanban-dropzone");
+            zonesShow.forEach(elements => {
+                elements.classList.add("kanban-dropzone--show");
+            })
+        });
+
+        this.elements.root.addEventListener("dragend", e => {
+            let zonesShow = document.querySelectorAll(".kanban-dropzone");
+            zonesShow.forEach(elements => {
+                elements.classList.remove("kanban-dropzone--show");
+            })        
         });
 
         this.elements.input.addEventListener("drop", e => {
