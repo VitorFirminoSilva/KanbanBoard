@@ -17,4 +17,5 @@ addStory.addEventListener("click", () => {
         const item = new Item(newItem.id, newItem.content);
         column.appendChild(item.elements.root);
     }
+    inputStory.value = "";
 });

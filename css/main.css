@@ -2,14 +2,12 @@
 .content{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 99.9vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
-
-
-    gap: 10px;
     background-color: #440065;  
+    gap: 5px;
 }
 
 .input-group{
@@ -19,7 +17,8 @@
     justify-content: space-between;
     padding: 0 30px;
     gap: 4px;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #story-user{
@@ -60,16 +59,17 @@
 .kanban{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width: 100%;
+    width: 97%;
     height: 100%;
     justify-items: center;
     gap: 10px;
-    margin: 20px auto;
+    margin: 0 10px;
+    margin-bottom: 5px;
 }
 
 .kanban-column-title{
-    margin: 20px 0;
-    font-size: 3.4rem;
+    margin: 10px 0 5px 0;
+    font-size: 2.8rem;
     font-weight: 700;
     color: white;
     user-select: none;
@@ -78,13 +78,16 @@
 .kanban-column{
     background-color: #330044;
     text-align: center;
-    border: 6px dashed white;
+    border: 3px dashed white;
     border-radius: 30px;
-    width: 90%;
+    width: 100%;
 }
 
+.kanban-item{
+    position: relative;
+}
 .kanban-item-input{
-    margin: 10px 10px;
+    margin: 0 10px;
     padding: 14px 15px;
     text-align: start;
     background-color: white;
@@ -92,12 +95,29 @@
     cursor: pointer;
 }
 
+.kanban-item-delete-btn{
+    position: absolute;
+    right: 11px;
+    top: 1px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 1.6rem;
+}
+
+.kanban-item-delete-btn:hover{
+    color: rgba(255, 0, 0, 0.9)
+}
+
 .kanban-dropzone{
-    height: 5px;
+    height: 10px;
     transition: background 0.15s, height 0.15s;
 }
 
 .kanban-dropzone--active{
-    height: 30px;
+    height: 40px;
     background: rgba(0,0,0,.7);
 }

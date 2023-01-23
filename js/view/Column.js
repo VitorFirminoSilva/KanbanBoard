@@ -16,7 +16,7 @@ export default class Column{
         this.elements.root.dataset.id = id;
         this.elements.title.textContent = title;
 
-        this.elements.root.appendChild(topDropZone);
+        this.elements.root.insertBefore(topDropZone, this.elements.items);
 
 
         KanbanAPI.getItems(id).forEach(item => {

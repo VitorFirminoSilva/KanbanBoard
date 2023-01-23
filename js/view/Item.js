@@ -1,3 +1,4 @@
+import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
 
 export default class Item{
@@ -10,12 +11,18 @@ export default class Item{
 
         this.elements.root = Item.createRoot();
         this.elements.input = this.elements.root.querySelector(".kanban-item-input");
+        this.elements.deleteBTN = this.elements.root.querySelector(".kanban-item-delete-btn");
        
         this.elements.root.dataset.id = id;
         this.elements.input.textContent = content;
         this.content = content;
 
         this.elements.root.appendChild(bottomDropZone);
+
+        this.elements.deleteBTN.addEventListener("click", e => {
+            KanbanAPI.deleteItem(id);
+            this.elements.root.parentElement.removeChild(this.elements.root);
+        });
 
         this.elements.root.addEventListener("dragstart", e => {
             e.dataTransfer.setData("text/plain", id);
@@ -32,7 +39,8 @@ export default class Item{
 
         return range.createContextualFragment(`
             <div class="kanban-item" draggable="true">
-                <div class="kanban-item-input" contentditable></div>
+                <button type="button" class="kanban-item-delete-btn" id="delete-story">&#10006;</button>
+                <div class="kanban-item-input"></div>
             </div>
         `).children[0];
     }

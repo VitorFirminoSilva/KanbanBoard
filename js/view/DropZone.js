@@ -6,7 +6,7 @@ export default class DropZone{
         range.selectNode(document.body);
 
         const dropZone = range.createContextualFragment(`
-            <div class="kanban-dropzone"> </div>
+            <div class="kanban-dropzone"></div>
         `).children[0];
 
         dropZone.addEventListener("dragover", e => {
@@ -41,9 +41,9 @@ export default class DropZone{
             KanbanAPI.updateItem(itemId, {
                 columnId,
                 position: droppedIndex
-            })
+            });
         });
 
-        return dropZone
+        return dropZone;
     }
 }
