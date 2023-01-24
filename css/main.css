@@ -37,7 +37,7 @@
 }
 
 
-#add-story{
+.btn-default{
     background-color: green;
     border-radius: 6px;
     color: white;
@@ -51,7 +51,7 @@
     transition: background-color 1s;
 }
 
-#add-story:focus{
+.btn-default:focus{
     transform: translateY(2px); 
     box-shadow: none;
 }
