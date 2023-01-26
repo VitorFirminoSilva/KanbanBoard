@@ -10,14 +10,24 @@ export default class KanbanAPI{
         return column.items;
     }
 
-    static insertItem(columnId, content){
+    static getColor(columnId){
+        const column = read().find(column => column.id == columnId);
+
+        if(!column){
+            return "#ffffff";
+        }
+
+        return column.color;
+    }
+
+    static insertItem(columnId, content, priority){
         const data = read();
         const column = data.find(column => column.id == columnId);
 
         const item = {
             id: Math.floor(Math.random() * 1000000),
-            content: content,
-            //update content
+            content,
+            priority
         };
 
         if(!column){
@@ -47,6 +57,7 @@ export default class KanbanAPI{
         }
 
         item.content = newProps.content === undefined ? item.content : newProps.content;
+        item.priority = newProps.priority === undefined ? item.priority : newProps.priority;
 
         if(newProps.columnId !== undefined && newProps.position !== undefined){
             const targetColumn = data.find(column => column.id == newProps.columnId)
@@ -85,14 +96,17 @@ function read(){
         return [
             {
                 id: 1,
+                color: "#ff0000",
                 items: []
             },
             {
                 id: 2,
+                color: "#ff9900",
                 items: []
             },
             {
                 id: 3,
+                color: "#00ff00",
                 items: []
             }
         ];

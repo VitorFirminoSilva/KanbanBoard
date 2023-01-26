@@ -18,9 +18,10 @@ export default class Column{
 
         this.elements.root.insertBefore(topDropZone, this.elements.items);
 
+        const initialColor = KanbanAPI.getColor(id);
 
         KanbanAPI.getItems(id).forEach(item => {
-            this.renderItem(item);
+            this.renderItem(item, initialColor);
         })
     
     }
@@ -38,8 +39,9 @@ export default class Column{
         `).children[0];
     }
 
-    renderItem(data){
-        const item = new Item(data.id, data.content);
+    renderItem(data, color){
+        const item = new Item(data.id, data.content, data.priority);
+        item.elements.icon.style.background = color;
         this.elements.items.appendChild(item.elements.root);
     }
 }

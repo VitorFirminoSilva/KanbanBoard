@@ -76,19 +76,44 @@
 }
 
 .kanban-item{
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
-.kanban-item-input{
+
+.kanban-item-content{
     margin: 0 10px;
-    padding: 14px 15px;
     text-align: start;
     background-color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.kanban-item-head{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 4px;
+    border-bottom: 1px solid #777;
+}
+
+.kanban-item-head-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kanban-item-status-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #000;
+    border-radius: 6px;
+    margin: 4px 4px
+}
+
+.kanban-item-input{
+    padding: 14px 15px;
+}
+
 .kanban-item-delete-btn{
-    position: absolute;
     right: 11px;
     top: 1px;
     border-radius: 6px;

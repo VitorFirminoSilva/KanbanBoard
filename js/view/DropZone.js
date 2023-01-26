@@ -36,6 +36,11 @@ export default class DropZone{
                 return;
             }
 
+            const droppedItemElementIcon = droppedItemElement.querySelector(".kanban-item-status-icon");
+            const columnColor = KanbanAPI.getColor(columnId);
+            droppedItemElementIcon.style.background = columnColor;
+
+
             insertAfter.after(droppedItemElement);
 
             KanbanAPI.updateItem(itemId, {
