@@ -14,7 +14,7 @@ export default class Slider {
         <div class="slider-container">
             <h3>Priority Level</h3>
             <div class="dot-slider">
-                <input type="radio" class="priority-level" name="priority-level" id="1" value="0">
+                <input type="radio" checked class="priority-level" name="priority-level" id="1" value="0">
                 <label for="1" data-priority-level="0"></label>
 
                 <input type="radio" class="priority-level" name="priority-level" id="2" value="2">
