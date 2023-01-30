@@ -12,7 +12,7 @@ new Kanban(document.querySelector(".kanban"));
 const modalInputNewStory = document.querySelectorAll("#modal-input-new-story");
 modalInputNewStory.forEach(element => {
     element.addEventListener("click", e => {
-        new Modal(document.querySelector(".content"));  
+        new Modal(document.querySelector(".content"), "newStory");  
     })
 });
 

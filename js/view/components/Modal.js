@@ -1,6 +1,6 @@
-import InputNewStory from "./modalContents/InputNewStory.js";
+import NewStory from "./modalContents/NewStory.js";
 export default class Modal{
-    constructor(root){
+    constructor(root, content){
         this.root = root;
         this.elements = {};
 
@@ -12,7 +12,7 @@ export default class Modal{
             this.elements.root.parentElement.removeChild(this.elements.root);
         });
 
-        const input = new InputNewStory();
+        const input = this.getContent(content);
         this.elements.content.appendChild(input.elements.root);
 
         this.root.appendChild(this.elements.root);
@@ -30,5 +30,13 @@ export default class Modal{
             </div>
         </div>
     `).children[0];
+    }
+
+    getContent(content){
+        switch(content){
+            case "newStory": return new NewStory();
+   
+            default: return new NewStory();
+        }
     }
 }
