@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/color/themes.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/components/sidebar.css">
+    <link rel="stylesheet" href="./css/components/modal.css">
+    <link rel="stylesheet" href="./css/components/slider.css">
 
-    <link rel="shortcut icon" href="./css/flower.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./css/svg/flower.svg" type="image/x-icon">
     <title>Kanban Board</title>
 </head>
-<body>
+<body class="theme1">
    <noscript>Você precisa habilitar JavaScript para visualizar esta página.</noscript>
 
     <div class="content">
-        <button type="button" class="btn-default sm" id="modal-input-new-story">Add Story</button>
-      
+        <nav class="sidebar">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="images/svg/flower.svg" alt="logo">
+                    </span>
+
+                    <div class="text header-text">
+                        <span class="name">KanbanBoard</span>
+                        <span class="profession">Web story user</span>
+                    </div>
+                </div>
+
+                <div class="toggle">&#10095;</div>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                       <!-- put JS Menu  -->
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                 <!-- put JS Content  -->
+                </div>
+            </div>
+        </nav>
+        <!-- <button type="button" class="btn-default sm" id="modal-input-new-story">Add Story</button> -->
         <div class="kanban"></div> 
     </div>
     <script src="./js/main.js" type="module"></script>

@@ -6,13 +6,24 @@
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif, Arial;
     font-size: 60%;
 }
 
 body {
     font-size: 1.6rem;
 }
+
+.content{
+    display: flex;
+    width: 99.9vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);  
+    gap: 5px;
+}
+
 
 /*SCROLL STYLE*/
 *::-webkit-scrollbar {
