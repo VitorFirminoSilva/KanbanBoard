@@ -1,11 +1,9 @@
 import KanbanAPI from "../api/KanbanAPI.js";
-import DropZone from "./DropZone.js";
 
 export default class Item{
 
     constructor(id, content, priority){
 
-        const bottomDropZone = DropZone.createDropZone();
         this.elements = {};
 
         this.elements.root = Item.createRoot();
@@ -19,30 +17,23 @@ export default class Item{
         this.elements.priority.textContent = `Priority Level ${priority}`
         this.content = content;
 
-        this.elements.root.appendChild(bottomDropZone);
-
         this.elements.deleteBTN.addEventListener("click", e => {
             KanbanAPI.deleteItem(id);
             this.elements.root.parentElement.removeChild(this.elements.root);
         });
 
-        this.elements.root.addEventListener("dragstart", e => {
-            e.dataTransfer.setData("text/plain", id);
 
-            let zonesShow = document.querySelectorAll(".kanban-dropzone");
-            zonesShow.forEach(elements => {
-                elements.classList.add("kanban-dropzone--show");
-            })
+        document.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("text/plain", id);
+            e.target.classList.add("dragging");
         });
 
         this.elements.root.addEventListener("dragend", e => {
-            let zonesShow = document.querySelectorAll(".kanban-dropzone");
-            zonesShow.forEach(elements => {
-                elements.classList.remove("kanban-dropzone--show");
-            })        
+            e.target.classList.remove("dragging");
         });
 
-        this.elements.input.addEventListener("drop", e => {
+        
+        this.elements.root.addEventListener("drop", e => {
             e.preventDefault();
         });
     }

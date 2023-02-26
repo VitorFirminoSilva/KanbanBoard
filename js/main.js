@@ -1,8 +1,5 @@
-import KanbanAPI from "./api/KanbanAPI.js";
 import Modal from "./view/components/Modal.js";
-import Item from "./view/Item.js";
 import Kanban from "./view/Kanban.js"
-
 
 //Kanban Main run
 new Kanban(document.querySelector(".kanban"));
