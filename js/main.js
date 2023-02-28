@@ -1,19 +1,12 @@
 import Modal from "./view/components/Modal.js";
 import Kanban from "./view/Kanban.js"
+import ButtonTriggerModal from "./view/components/Buttons/ButtonTriggerModal.js"
 
 //Kanban Main run
 new Kanban(document.querySelector(".kanban"));
+new ButtonTriggerModal();
 
 
-//Modals functions
-const modalInputNewStory = document.querySelectorAll("#modal-input-new-story");
-modalInputNewStory.forEach(element => {
-    element.addEventListener("click", e => {
-        new Modal(document.querySelector(".content"), "newStory");  
-    })
-});
-
-///
 
 //Sidebar functions
 const body = document.querySelector("body");

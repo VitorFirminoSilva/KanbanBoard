@@ -34,7 +34,7 @@ export default class Modal{
 
     getContent(content){
         switch(content){
-            case "newStory": return new NewStory();
+            case "add-story": return new NewStory();
    
             default: return new NewStory();
         }
