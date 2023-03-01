@@ -17,7 +17,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #d0d0d0;
+    background: var(--grey-color);
 }
 
 .dot-slider input,
@@ -55,8 +55,8 @@
     transform: translate(-50%, -50%);
     width: 30px;
     height: 30px;
-    border: 2px solid #d0d0d0;
-    background: #fff;
+    border: 2px solid var(--grey-color);
+    background: var(--light-color);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
@@ -77,7 +77,7 @@
 .dot-slider label input:checked + label::after{
     border-width: 4px;
     transform: translate(-50%, -50%) scale(0.75);
-    border: 2px solid #000;
+    border: 2px solid var(--dark-color);
 }
 
 .dot-slider input{
@@ -96,10 +96,10 @@
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
-    background: #000;
+    background: var(--dark-color);
     border-radius: 50%;
     transition: all .15s ease-in-out;
-    border: 2px solid #fff;
+    border: 2px solid var(--light-color);
     opacity: 0;
     z-index: 2;
 }

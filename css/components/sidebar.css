@@ -17,7 +17,7 @@
 .sidebar .text{
     font-size: 1.6rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--text-color-dark);
     transition: var(--tran-03);
     white-space: nowrap;
     opacity: 1;
@@ -52,7 +52,7 @@
 
 .sidebar li .icon,
 .sidebar li .text{
-    color: var(--text-color);
+    color: var(--text-color-dark);
     transition: var(--tran-02);
 }
 
@@ -110,7 +110,7 @@ header .image-text .header-text{
 }
 
 body.dark .sidebar header .toggle{
-    color: var(--text-color)
+    color: var(--text-color-dark)
 }
 
 .sidebar .menu{
@@ -138,7 +138,7 @@ body.dark .sidebar header .toggle{
 
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text{
-    color: var(--text-color);
+    color: var(--text-color-dark);
 }
 
 .sidebar .menu-bar{
