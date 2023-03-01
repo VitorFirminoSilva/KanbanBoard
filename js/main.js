@@ -4,7 +4,7 @@ import ButtonTriggerModal from "./view/components/Buttons/ButtonTriggerModal.js"
 
 //Kanban Main run
 new Kanban(document.querySelector(".kanban"));
-new ButtonTriggerModal();
+new ButtonTriggerModal(document.querySelector("body"));
 
 
 

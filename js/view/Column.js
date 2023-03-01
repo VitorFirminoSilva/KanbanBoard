@@ -16,9 +16,13 @@ export default class Column {
         this.elements.root.addEventListener("dragenter", (e) => {
 
             const columnId = Number(this.elements.root.dataset.id);
+
             const dragging = document.querySelector(".dragging");
+
             const applyAfter = this.getNewPosition(this.elements.items, e.clientY);
+
             const columnColor = KanbanAPI.getColor(columnId);
+
             const droppedItemElementIcon = dragging.querySelector(".kanban-item-status-icon");
 
             droppedItemElementIcon.style.background = columnColor;

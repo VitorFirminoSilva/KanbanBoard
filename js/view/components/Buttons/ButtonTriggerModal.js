@@ -1,10 +1,23 @@
 import Modal from "../Modal.js"
 export default class ButtonTriggerModal{
-    constructor(){
-        const buttons = document.querySelectorAll(".button");
-        buttons.forEach(element => element.addEventListener("click", () => {
-            new Modal(document.querySelector(".content"), element.getAttribute("data-trigger"));  
-        }));
+    constructor(root){
+        const buttons = root.querySelectorAll(".button");
+        buttons.forEach(element => {
+            element.addEventListener("click", () => {
+                this.actionTrigger(element.getAttribute("data-trigger"));  
+            });
+        });
+    }
+
+    actionTrigger(string){
+
+        switch(string){
+            case "add-story":  new Modal(document.querySelector(".content"), "add-story");
+            break;
+            case "remove-modal": Modal.removeModal();
+            break;
+            default: new Modal(document.querySelector(".content"), "add-story");;
+        }
     }
 }
 
