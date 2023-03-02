@@ -8,13 +8,13 @@ export default class Item{
 
         this.elements.root = Item.createRoot();
         this.elements.input = this.elements.root.querySelector(".kanban-item-input");
-        this.elements.deleteBTN = this.elements.root.querySelector(".kanban-item-delete-btn");
-        this.elements.icon = this.elements.root.querySelector(".kanban-item-status-icon");
-        this.elements.priority = this.elements.root.querySelector(".kanban-item-status-priority");
+        this.elements.deleteBTN = this.elements.root.querySelector(".kanban-item-button-delete");
+        this.elements.status = this.elements.root.querySelector(".kanban-item-status");
+        this.elements.priority = this.elements.root.querySelector(".kanban-item-priority-triangle");
         
         this.elements.root.dataset.id = id;
         this.elements.input.textContent = content;
-        this.elements.priority.textContent = `Priority Level ${priority}`
+        this.elements.priority.setAttribute("data-priority-level", priority)
         this.content = content;
 
         this.elements.deleteBTN.addEventListener("click", e => {
@@ -44,20 +44,21 @@ export default class Item{
 
         return range.createContextualFragment(`
             <div class="kanban-item" draggable="true">
-                <div class="kanban-item-content">
-                    <div class="kanban-item-head">
-                        <div class="kanban-item-head-status">
-                            <div class="kanban-item-status-icon"></div>
-                            <div class="kanban-item-status-priority"></div>
-                        </div>
-                        <div class="kanban-item-head-buttons">
-                            <button type="button" class="kanban-item-delete-btn" id="delete-story">&#10006;</button>
+                <div class="kanban-item-container">
+                    <div class="kanban-item-status"></div>
+                    <div class="kanban-item-content">
+                        <div class="kanban-item-input"></div>
+                        <div class="kanban-item-buttons">
+                            <button type="button" class="button kanban-item-button-delete">&#10006;</button>                  
+                            <div class="kanban-item-priority">
+                                <div class="kanban-item-priority-triangle"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="kanban-item-input"></div>
+                    <div class="kanban-item-footer"></div>
                 </div>
             </div>
         `).children[0];
-    }
 
+    }
 }

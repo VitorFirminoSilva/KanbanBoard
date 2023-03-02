@@ -34,7 +34,7 @@ export default class InputNewStory{
                 const column = document.querySelector(`[data-id="${1}"]`);
                 const item = new Item(newItem.id, newItem.content, sliderValue);
 
-                item.elements.icon.style.background = initialColor;
+                item.elements.status.style.background = initialColor;
 
                 const columnList = column.querySelector(".kanban-column-items")
 

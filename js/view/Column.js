@@ -23,9 +23,9 @@ export default class Column {
 
             const columnColor = KanbanAPI.getColor(columnId);
 
-            const droppedItemElementIcon = dragging.querySelector(".kanban-item-status-icon");
+            const droppedItemElementStatus = dragging.querySelector(".kanban-item-status");
 
-            droppedItemElementIcon.style.background = columnColor;
+            droppedItemElementStatus.style.background = columnColor;
 
             if (applyAfter) {
                 applyAfter.insertAdjacentElement("afterend", dragging);
@@ -76,7 +76,7 @@ export default class Column {
 
     renderItem(data, color) {
         const item = new Item(data.id, data.content, data.priority);
-        item.elements.icon.style.background = color;
+        item.elements.status.style.background = color;
         this.elements.items.appendChild(item.elements.root);
     }
 
