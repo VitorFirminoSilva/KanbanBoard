@@ -1,5 +1,6 @@
 import ButtonTriggerModal from "./Buttons/ButtonTriggerModal.js";
 import NewStory from "./modalContents/NewStory.js";
+import GetJson from "./modalContents/GetJson.js";
 
 export default class Modal{
     constructor(root, content){
@@ -40,6 +41,8 @@ export default class Modal{
     getContent(content){
         switch(content){
             case "add-story": return new NewStory();
+            break;
+            case "get-json": return new GetJson();
             break;
             default: return new NewStory();
         }

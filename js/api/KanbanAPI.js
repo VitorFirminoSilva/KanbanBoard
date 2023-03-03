@@ -87,6 +87,11 @@ export default class KanbanAPI{
         save(data);
     }
 
+
+    static getJsonData(){
+        return JSON.stringify(read(), undefined, 3);
+    }
+
 }
 
 function read(){
