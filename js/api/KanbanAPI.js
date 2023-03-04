@@ -92,6 +92,35 @@ export default class KanbanAPI{
         return JSON.stringify(read(), undefined, 3);
     }
 
+    static setJsonData(data){
+        return save(data);
+    }
+
+    static getJsonPlaceholder(){
+        const place = [
+            {
+               "id": 1,
+               "color": "#ff0000",
+               "items": []
+            },
+            {
+               "id": 2,
+               "color": "#ff9900",
+               "items": []
+            },
+            {
+               "id": 3,
+               "color": "#00ff00",
+               "items": []
+            }
+        ]
+        
+        return JSON.stringify(place, undefined, 3);
+    
+    }
+
+    
+
 }
 
 function read(){
