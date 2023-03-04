@@ -10,6 +10,12 @@ export default class Kanban{
         });
     }
 
+    static clearKanban(root){
+        while (root.firstChild) {
+            root.removeChild(root.lastChild);
+        }
+    }
+
     static columns(){
         return [
             {
