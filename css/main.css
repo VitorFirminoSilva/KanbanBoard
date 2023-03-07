@@ -45,6 +45,12 @@
     padding: 10px;
     justify-items: center;
     gap: 10px;
+    margin-left: 250px;
+    transition: var(--tran-05);
+}
+
+.kanban.close{
+    margin-left: 90px;
 }
 
 .kanban-column-title{
