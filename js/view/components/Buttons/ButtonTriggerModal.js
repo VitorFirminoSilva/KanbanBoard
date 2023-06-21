@@ -18,6 +18,8 @@ export default class ButtonTriggerModal{
             break;
             case "set-json":  new Modal(document.querySelector(".content"), "set-json");
             break;
+            case "get-list":  new Modal(document.querySelector(".content"), "get-list");
+            break;
             case "remove-modal": Modal.removeModal();
             break;
             default: new Modal(document.querySelector(".content"), "add-story");;
