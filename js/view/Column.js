@@ -14,7 +14,6 @@ export default class Column {
         this.elements.title.textContent = title;
 
         this.elements.root.addEventListener("dragenter", (e) => {
-
             const columnId = Number(this.elements.root.dataset.id);
 
             const dragging = document.querySelector(".dragging");
@@ -33,26 +32,28 @@ export default class Column {
                 this.elements.items.prepend(dragging);
             }
 
-            this.elements.root.addEventListener("dragend", (e) => {
-            
-                e.preventDefault();
-                const itemId = Number(dragging.getAttribute("data-id"));
-                const dropZoneInColumn = Array.from(this.elements.items.querySelectorAll(".kanban-item"));
-                const droppedIndex = dropZoneInColumn.indexOf(dragging);
- 
-                KanbanAPI.updateItem(
-                    itemId, {
-                        columnId,
-                        position: droppedIndex
-                    }
-                );
            
-            });
-
         });
 
-        
+        this.elements.root.addEventListener("dragend", (e) => {
+            e.preventDefault();
+            const columnId = Number(this.elements.root.dataset.id);
+            const dragging = e.target;
+    
+            const itemId = Number(dragging.getAttribute("data-id"));
+            const dropZoneInColumn = Array.from(this.elements.items.querySelectorAll(".kanban-item"));
+            const droppedIndex = dropZoneInColumn.indexOf(dragging);
 
+            KanbanAPI.updateItem(
+                itemId, {
+                    columnId,
+                    position: droppedIndex
+                }
+            );
+        }); 
+
+
+        
         const initialColor = KanbanAPI.getColor(id);
 
         KanbanAPI.getItems(id).forEach(item => {
