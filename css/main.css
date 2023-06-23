@@ -67,6 +67,14 @@
     border-radius: 30px;
     width: 100%;
     box-shadow: 2px -1px 6px 0 var(--dark-color);
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.kanban-column-items{
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    margin: 0 5px 20px 5px
 }
 
 
@@ -93,9 +101,15 @@
     text-align: start;
 }
 
-.kanban-item-buttons{
+.kanban-item-icons{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kanban-item-buttons{
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -120,7 +134,27 @@
     color: rgba(0,0,0,0.3);
     cursor: pointer;
     padding: 0 4px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+}
+
+.kanban-item-button-edit{
+    right: 11px;
+    top: 1px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 1.5rem;
+}
+
+.kanban-item-button-delete:hover{
+    color: var(--danger-color);
+}
+
+.kanban-item-button-edit:hover{
+    color: var(--success-color);
 }
 
 
@@ -164,9 +198,6 @@
 }
 
 /* Triangle Border */
-.kanban-item-button-delete:hover{
-    color: var(--danger-color);
-}
 
 .dragging{
     opacity: .5;
