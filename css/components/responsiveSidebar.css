@@ -19,6 +19,8 @@
         flex-direction: column;
         align-items: center;
         padding: 100px;
+        border-radius: 0 200px 200px 200px;
+        animation: sidebar_open 500ms forwards 200ms ease-out;
     }
 
     .sidebar header{
@@ -28,8 +30,6 @@
     .sidebar header .toggle.angle{
         display: none;
     }
-
-    
 
     .sidebar header .toggle.bar{
         display: flex;
