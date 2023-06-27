@@ -16,12 +16,8 @@ body {
 
 .content{
     display: flex;
-    width: 99.9vw;
+    background-color: var(--background-color); 
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color);  
-    gap: 5px;
 }
 
 
