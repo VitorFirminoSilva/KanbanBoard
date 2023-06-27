@@ -48,8 +48,11 @@ export default class Item{
                     <div class="kanban-item-status"></div>
                     <div class="kanban-item-content">
                         <div class="kanban-item-input"></div>
-                        <div class="kanban-item-buttons">
-                            <button type="button" class="kanban-item-button-delete">&#10006;</button>                  
+                        <div class="kanban-item-icons">
+                            <div class="kanban-item-buttons">
+                                <button type="button" class="kanban-item-button-edit"><i class="fa fa-edit icon"></i></button>
+                                <button type="button" class="kanban-item-button-delete"><i class="fa fa-close icon"></i></button>
+                            </div>                  
                             <div class="kanban-item-priority">
                                 <div class="kanban-item-priority-triangle"></div>
                             </div>

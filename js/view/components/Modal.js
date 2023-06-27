@@ -2,6 +2,7 @@ import ButtonTriggerModal from "./Buttons/ButtonTriggerModal.js";
 import NewStory from "./modalContents/NewStory.js";
 import GetJson from "./modalContents/GetJson.js";
 import SetJson from "./modalContents/SetJson.js";
+import GetList from "./modalContents/GetList.js";
 
 export default class Modal{
     constructor(root, content){
@@ -46,6 +47,8 @@ export default class Modal{
             case "get-json": return new GetJson();
             break;
             case "set-json": return new SetJson();
+            break;
+            case "get-list": return new GetList();
             break;
             default: return new NewStory();
         }

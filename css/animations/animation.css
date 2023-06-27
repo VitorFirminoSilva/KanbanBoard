@@ -1,0 +1,4 @@
+@keyframes sidebar_open {
+    from {border-radius: 0 200px 200px 200px;}
+    to {border-radius: 0;}
+}

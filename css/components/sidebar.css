@@ -8,6 +8,7 @@
     padding: 10px 14px;
     background-color: var(--sidebar-color);
     transition: var(--tran-05);
+    z-index: 99;
 }
 
 .sidebar.close{
